@@ -1,0 +1,44 @@
+int Rojo =2;
+int Azul =3;
+int Primero;
+int Segundo;
+
+void setup() {
+  pinMode(Rojo, OUTPUT);
+  pinMode(Azul, OUTPUT);
+
+  // initialize digital pin LED_BUILTIN as an output.
+  Serial.begin(9600);
+  Serial.println("Cuantas veces parpadea el primer led?");
+  while(Serial.available() == 0){
+
+   
+  }
+  Primero = Serial.parseInt();
+  
+  Serial.println("Cuantas veces parpadea el segundo led?");
+  delay(5000);
+  while(Serial.available() == 0){
+
+   
+  }
+  Segundo = Serial.parseInt();
+}  
+
+// the loop function runs over and over again forever
+void loop() {
+
+for(int i = 0; i < Primero; i++){
+  digitalWrite(Rojo, HIGH);
+  delay(500);
+  digitalWrite(Rojo, LOW);
+  delay(500);
+}
+
+for(int i = 0; i < Segundo; i++){
+  digitalWrite(Azul, HIGH);
+  delay(500);
+  digitalWrite(Azul, LOW);
+  delay(500);
+}
+}
